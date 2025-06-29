@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Meta Stuffz -->
+    <meta charset="UTF-8" />
+    <title>Character Converter (Psych2CNE)</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./src/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css"
+    />
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <script src="src/converter.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-json.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
+  </head>
+  <body>
+    <h1>Character Converter (Psych2CNE)</h1>
+
+    <div class="main-container">
+      <div class="upload-box">
+        <label for="fileInput">Select Character File:</label>
+        <label for="fileInput" class="inputButt">Choose File</label>
+        <input type="file" id="fileInput" class="width: 100px; text-size-adjust: 100px" accept=".json,.xml" onchange="onFileChange()" />
+        <div class="status" id="status">No file loaded.</div>
+
+        <label for="conversionType">Conversion To:</label>
+        <select id="conversionType">
+          <option value="psych2cne">Psych → Codename</option>
+          <option value="cne2psych">Codename → Psych</option>
+        </select>
+
+        <label for="charType">Character Type:</label>
+        <select id="charType">
+          <option value='isPlayer="false"'>dad</option>
+          <option value='isPlayer="true"'>bf</option>
+          <option value='isPlayer="false" isGF="true"'>gf</option>
+        </select>
+
+        <label for="charType">Logs (they'll show up ehhh evenually):</label>
+        <div class="log-box" id="logBox"></div>
+        <div style="margin-top: 25px;"></div>
+        <button
+          onclick="convertFile()"
+          style="width: 100px; text-size-adjust: 100px"
+        >
+          Convert
+        </button>
+      </div>
+
+      <div class="output-section">
+        <h2>Converted Character Data</h2>
+        <pre><code id="output" style="language-markup">// Your converted output will appear here...</code></pre>
+        <button onclick="downloadXML()">Download Result</button>
+      </div>
+    </div>
+  </body>
+</html>

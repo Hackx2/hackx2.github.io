@@ -1,0 +1,5 @@
+<!DOCTYPE codename-engine-character>
+<character isPlayer="true" flipX="false" holdTime="4" x="190" y="100"> 
+   <anim name="danceLeft" anim="idle" loop="false" x="0" y="-9" indices="30,0..14"/>
+   <anim name="danceRight" anim="idle" loop="false" x="0" y="-9" indices="15,16,17,18,19,20,21,22,23,24,25,26,27,28,29"/>
+</character>
